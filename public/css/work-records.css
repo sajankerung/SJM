@@ -1,0 +1,253 @@
+
+/* =====================================
+   SJM Work Records - Modern Blue Theme
+===================================== */
+
+/* Work Records Page */
+
+.page-header {
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Records Section */
+
+.records-section {
+    background: var(--card-bg);
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(30, 55, 90, 0.04);
+    margin-bottom: 24px;
+}
+
+.records-section h2 {
+    font-size: 21px;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+/* Month Filter */
+
+.month-filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.month-filter label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.month-filter input {
+    padding: 11px 12px;
+    border: 1px solid #d5dce7;
+    border-radius: 9px;
+    font: inherit;
+    background: white;
+    color: var(--text);
+}
+
+.month-filter input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(36, 99, 197, 0.12);
+}
+
+.month-filter .button {
+    cursor: pointer;
+}
+
+/* Selected Month Information */
+
+.records-section > .muted {
+    margin: 18px 0 14px;
+    font-size: 14px;
+}
+
+/* Records Table */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.table-container table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-container th,
+.table-container td {
+    padding: 15px 14px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.table-container th {
+    background: #f8faff;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table-container tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table-container tbody tr:hover {
+    background: #f8faff;
+}
+
+.table-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Empty Table Message */
+
+.table-container td[colspan="6"] {
+    text-align: center;
+    padding: 35px 15px;
+    color: var(--muted);
+}
+
+/* Edit and Delete Buttons */
+
+.action-link {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.edit-button {
+    color: white;
+    background: #2563eb;
+}
+
+.edit-button:hover {
+    background: #1d4ed8;
+}
+
+.delete-button {
+    color: white;
+    background: var(--danger);
+    font-family: inherit;
+}
+
+.delete-button:hover {
+    background: #b91c1c;
+}
+
+/* Work Record Form */
+
+.work-form {
+    max-width: 650px;
+    background: white;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.work-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 18px 0 8px;
+}
+
+.work-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5dce7;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.work-form button {
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.form-errors {
+    max-width: 650px;
+    margin-bottom: 20px;
+    padding: 16px;
+    color: #a61b1b;
+    background: #fff0f0;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 800px) {
+    .records-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .records-section {
+        padding: 16px;
+    }
+
+    .records-section h2 {
+        font-size: 18px;
+    }
+
+    .month-filter {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .month-filter input,
+    .month-filter .button {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .work-form {
+        padding: 18px;
+    }
+}
+.cancel-button {
+    background: #64748b;
+    color: #ffffff;
+    margin-left: 8px;
+}
+
+.cancel-button:hover {
+    background: #475569;
+    color: #ffffff;
+}
