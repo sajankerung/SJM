@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\WorkRecord;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function index()
     {
         //temporary: use test user ID 1
-        $userId = 1;
+        // $userId = 1;
+        $userId = Auth::id();
 
         //Get this user's work records
         $records = WorkRecord::where('user_id', $userId)

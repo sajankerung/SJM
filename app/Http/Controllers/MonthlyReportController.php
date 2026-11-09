@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 use App\Models\WorkRecord;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class MonthlyReportController extends Controller
 {
     public function index(Request $request)
     {
         // Temporary test user ID
-        $userId = 1;
+        // $userId = 1;
+        $userId = Auth::id();
 
         // Get selected month or current month
         $selectedMonth = $request->input(

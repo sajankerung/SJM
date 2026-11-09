@@ -23,16 +23,17 @@
 
             <nav class="nav">
                 <a href="{{ route('dashboard') }}">Dashboard</a>
-                <a href="{{ route('work-records.index') }}" class="active">
-                    Work Records
-                </a>
-                <a href="#">Monthly Reports</a>
+                <a href="{{ route('work-records.index') }}" class="active">Work Records</a>
+                <a href="{{ route('monthly-reports.index') }}">Monthly Reports</a>
                 <a href="#">Profile</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="logout-btn">Logout</button>
+                </form>
             </nav>
         </aside>
 
         <main class="main">
-
             <header class="page-header">
                 <div>
                     <h1>Work Records</h1>
@@ -53,10 +54,7 @@
             @endif
 
             <section class="records-section">
-
-
                 <h2>Work Records by Month</h2>
-
                 <form action="{{ route('work-records.index') }}" method="GET" class="month-filter">
                     <label for="month">Select Month:</label>
                     <input type="month" id="month" name="month" value="{{ $selectedMonth }}" required>
