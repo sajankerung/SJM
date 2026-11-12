@@ -31,7 +31,6 @@
 
                 <a href="{{ route('monthly-reports.index') }}" class="active">Monthly Reports</a>
 
-                <a href="#">Profile</a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="logout-btn">Logout</button>
@@ -61,18 +60,13 @@
 
                     <input type="month" id="month" name="month" value="{{ $selectedMonth }}" required>
 
-                    <button type="submit" class="button">
-                        Filter
-                    </button>
+                    <button type="submit" class="button">Filter</button>
 
-                    <a href="{{ route('monthly-reports.index', ['month' => now()->format('Y-m')]) }}" class="button">
-                        Current Month
-                    </a>
+                    <a href="{{ route('monthly-reports.index', ['month' => now()->format('Y-m')]) }}" class="button">Current Month</a>
 
                 </form>
 
-                <p class="muted">
-                    Report for
+                <p class="muted">Report for
                     {{ \Carbon\Carbon::createFromFormat('Y-m', $selectedMonth)->format('F Y') }}
                 </p>
 
@@ -80,7 +74,6 @@
 
             <!-- Monthly Summary -->
             <section class="report-cards">
-
                 <div class="report-card">
                     <p>Total Working Hours</p>
                     <h2>{{ number_format($totalHours, 1) }} hours</h2>
@@ -95,7 +88,6 @@
                     <p>Total Work Records</p>
                     <h2>{{ $totalRecords }} records</h2>
                 </div>
-
             </section>
 
             <!-- Work Record Details -->

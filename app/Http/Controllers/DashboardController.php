@@ -20,10 +20,13 @@ class DashboardController extends Controller
             ->whereYear('work_date', now()->year)
             ->whereMonth('work_date', now()->month)
             ->orderByDesc('work_date')
+            ->orderByDesc('start_time')
             ->get();
-
         //Count records
         $totalRecords = $records->count();
+
+        //Get only the latest 5 records for the dashboard
+        $recentRecords = $records->take(5);
 
         //Calculate total working hours
         $totalHours = $records->sum(function ($record) {
@@ -44,7 +47,7 @@ class DashboardController extends Controller
         });
 
         return view('dashboard', compact(
-            'records',
+            'recentRecords',
             'totalRecords',
             'totalHours',
             'totalSalary'

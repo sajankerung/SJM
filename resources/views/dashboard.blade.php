@@ -19,7 +19,6 @@
                 <a href="/" class="active">Dashboard</a>
                 <a href="{{ route('work-records.index') }}">Work Records</a>
                 <a href="{{ route('monthly-reports.index')}}">Monthly Reports</a>
-                <a href="#">Profile</a>
                 <form action="{{ route('logout')}}" method="POST">
                     @csrf
                     <button type="submit" class="logout-btn">Logout</button>
@@ -68,7 +67,7 @@
                     </thead>
 
                     <tbody>
-                        @forelse ($records as $record)
+                        @forelse ($recentRecords as $record)
                             @php
                                 $start = \Carbon\Carbon::parse($record->start_time);
                                 $end = \Carbon\Carbon::parse($record->end_time);
@@ -78,16 +77,8 @@
 
                             <tr>
                                 <td>
-                                    <a
-                                        href="{{ route('work-records.edit', $record) }}"class="action-link edit-button">Edit</a>
-                                    <form action="{{ route('work-records.destroy', $record) }}" method="POST"
-                                        onsubmit="return confirm('Are you sure you want to delete this work record?');"
-                                        style="display: inline;">
-                                        @csrf
-                                        @method('DELETE')
-
-                                        <button type="submit" class="action-link delete-button">Delete</button>
-                                    </form>
+                                    <a href="{{ route('work-records.edit', $record) }}"
+                                        class="action-link edit-button">Edit</a>
                                 </td>
                                 <td>{{ $record->work_date->format('Y-m-d') }}</td>
                                 <td>{{ $start->format('H:i') }}</td>

@@ -25,7 +25,6 @@
                 <a href="{{ route('dashboard') }}">Dashboard</a>
                 <a href="{{ route('work-records.index') }}" class="active">Work Records</a>
                 <a href="{{ route('monthly-reports.index') }}">Monthly Reports</a>
-                <a href="#">Profile</a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="logout-btn">Logout</button>
