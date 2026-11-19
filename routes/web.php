@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WorkRecordController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MonthlyReportController;
+use App\Http\Controllers\TaskController;
 
 // Guest routes: only users who are not logged in
 Route::middleware('guest')->group(function () {
@@ -58,4 +59,14 @@ Route::middleware('auth')->group(function () {
     // Monthly Reports
     Route::get('/monthly-reports', [MonthlyReportController::class, 'index'])
         ->name('monthly-reports.index');
+
+    // Task Management
+    Route::get('/tasks', [TaskController::class, 'index'])
+        ->name('tasks.index');
+
+    Route::get('/tasks/create', [TaskController::class, 'create'])
+        ->name('tasks.create');
+
+    Route::post('/tasks', [TaskController::class, 'store'])
+        ->name('tasks.store');
 });
